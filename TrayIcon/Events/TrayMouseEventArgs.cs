@@ -13,7 +13,5 @@ namespace LenChon.Win32.TrayIcon.Events
         {
             Button = clickedButton;
         }
-
-        public TrayMouseEventArgs() { }
     }
 }

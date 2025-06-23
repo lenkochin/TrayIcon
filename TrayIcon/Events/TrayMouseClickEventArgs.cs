@@ -13,7 +13,5 @@ namespace LenChon.Win32.TrayIcon.Events
         {
             IsDoubleClick = isDoubleClick;
         }
-
-        public TrayMouseClickEventArgs() { }
     }
 }

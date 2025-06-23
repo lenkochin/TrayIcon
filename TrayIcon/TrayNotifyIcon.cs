@@ -36,9 +36,6 @@ namespace LenChon.Win32.TrayIcon
         private bool _leftDoubleClick = false;
         private bool _rightDoubleClick = false;
 
-        /// <summary>
-        /// 承载弹出元素的<see cref="Popup"/>。
-        /// </summary>
         private Popup? _contentHost;
 
         #region Dependency Properties
@@ -94,10 +91,6 @@ namespace LenChon.Win32.TrayIcon
             set => SetValue(TrayPopupActivationMethodProperty, value);
         }
 
-        /// <summary>
-        /// The closing animaion to be used when focus lost.
-        /// See <see cref="TrayPopupOpeningAnimation"/> for more information.
-        /// </summary>
         public Storyboard TrayPopupClosingAnimation
         {
             get => (Storyboard)GetValue(TrayPopupClosingAnimationProperty);
@@ -239,7 +232,7 @@ namespace LenChon.Win32.TrayIcon
         #region Private Methods
 
         /// <summary>
-        /// Constructs a NOTIFYICONDATA that used by Shell_NotifyIcon.
+        /// Construct a NOTIFYICONDATA that used by Shell_NotifyIcon.
         /// </summary>
         /// <param name="d"><see cref="TrayNotifyIcon"/></param>
         /// <returns></returns>
@@ -252,7 +245,6 @@ namespace LenChon.Win32.TrayIcon
                 return default;
             }
 
-            //Constructs Notifydata
             var data = new NotifyIconData()
             {
                 IconHandle = hIcon.Handle,
@@ -660,15 +652,6 @@ namespace LenChon.Win32.TrayIcon
             }
         }
 
-        /// <summary>
-        /// Processing windows message.
-        /// </summary>
-        /// <param name="hWnd">The target window's handle.</param>
-        /// <param name="Msg">The windows message.</param>
-        /// <param name="wParam">Additional information of the message.</param>
-        /// <param name="lParam">Additional information of the message.</param>
-        /// <param name="handled">Sets this message is handled or not.</param>
-        /// <returns>Value based on message itself.</returns>
         private IntPtr WndProcCallback(IntPtr hWnd, int Msg, IntPtr wParam, IntPtr lParam, ref bool handled)
         {
             if (_isInDesginMode)
