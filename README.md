@@ -11,23 +11,23 @@ The `TrayNotifyIcon` is the key class. Since it's a `ContentControl`, you can si
 
 ```xaml
 <Window
-    x:Class="MoyuTokei.Views.MainWindow"
-    ...
-    xmlns:tray="clr-namespace:LenChon.Win32.TrayIcon;assembly=TrayIcon">
-    <Grid>
-   		<tray:TrayNotifyIcon
-                            IconPath="app.ico"
-							TrayIconToolTip="Nice day"
-							TrayPopupActivationMethod="LeftDoubleClick">
-            <!-- Your custom control here -->
-            <tray:TrayNotifyIcon.TrayPopupOpeningAnimation>
-                <!-- Optional: Apply a storyboard for the opening animation -->
-			</tray:TrayNotifyIcon.TrayPopupOpeningAnimation>
-            <tray:TrayNotifyIcon.TrayPopupClosingAnimation>
-                <!-- Same as TrayPopupOpeningAnimation -->
+	x:Class="MoyuTokei.Views.MainWindow"
+	...
+	xmlns:tray="clr-namespace:LenChon.Win32.TrayIcon;assembly=TrayIcon">
+	<Grid>
+ 		<tray:TrayNotifyIcon
+			IconPath="app.ico"
+			TrayIconToolTip="Nice day"
+			TrayPopupActivationMethod="LeftDoubleClick">
+				<!-- Your custom control here -->
+		<tray:TrayNotifyIcon.TrayPopupOpeningAnimation>
+				<!-- Optional: Apply a storyboard for the opening animation -->
+		</tray:TrayNotifyIcon.TrayPopupOpeningAnimation>
+			<tray:TrayNotifyIcon.TrayPopupClosingAnimation>
+				<!-- Same as TrayPopupOpeningAnimation -->
 			</tray:TrayNotifyIcon.TrayPopupClosingAnimation>
-        </tray:TrayNotifyIcon>
-    </Grid>
+		</tray:TrayNotifyIcon>
+	</Grid>
 </Window>
 ```
 
